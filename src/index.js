@@ -6,6 +6,7 @@ import connectDB from "./db/index.js";
 // const app = express();
 
 import {app} from "./app.js"
+import { ApiResponse } from "./utils/ApiResponse.js";
 
 dotenv.config({
     path: './.env',
@@ -13,6 +14,12 @@ dotenv.config({
 })
 
 // dotenv.config();
+
+
+app.get('/', (req, res) => {
+     res.send("<h1>Believe us we will not let your server down</h1>")
+})
+
 
 connectDB()  // connectDB returns a promise so we need to use .then and .catch
 .then(() =>{
